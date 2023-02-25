@@ -4,12 +4,6 @@
 	],
 	"service": "app",
 	"workspaceFolder": "/home/jovyan/work",
-	"features": {
-		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:latest": {
-			"installTinyTex": true
-		}
-		// "ghcr.io/devcontainers/features/python:1": {}
-	},
 	"mounts": [
 		"source=${localWorkspaceFolder},target=/home/jovyan/work,type=bind,consistency=cached"
 	],
@@ -18,7 +12,8 @@
 		"vscode": {
 			"extensions": [
 				"ms-toolsai.jupyter",
-				"ms-python.python"
+				"ms-python.python",
+				"ms-python.flake8"
 			]
 		}
 	}
