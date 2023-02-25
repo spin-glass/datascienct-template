@@ -1,5 +1,4 @@
-FROM gcr.io/kaggle-images/python:latest 
-
-RUN pip install -U pip && \
-    pip install black && \
-    pip install 'black[jupyter]'
+FROM jupyter/all-spark-notebook:latest
+USER jovyan
+RUN conda install -y nbformat
+RUN echo "export QUARTO_PYTHON=/opt/conda/bin/python" >> ~/.bashrc

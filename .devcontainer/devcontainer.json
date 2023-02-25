@@ -1,5 +1,25 @@
 {
-	"dockerComposeFile": ["../docker-compose.yml"],
-	"service": "jupyter",
-	"workspaceFolder": "/tmp/working"
-  }
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "app",
+	"workspaceFolder": "/home/jovyan/work",
+	"features": {
+		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:latest": {
+			"installTinyTex": true
+		}
+		// "ghcr.io/devcontainers/features/python:1": {}
+	},
+	"mounts": [
+		"source=${localWorkspaceFolder},target=/home/jovyan/work,type=bind,consistency=cached"
+	],
+	// "onCreateCommand": "quarto install tinytex",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-toolsai.jupyter",
+				"ms-python.python"
+			]
+		}
+	}
+}

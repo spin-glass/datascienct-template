@@ -1,10 +1,18 @@
-version: "3"
+version: '3'
+
 services:
-    jupyter:
-        build: .
-        volumes:
-            - $PWD:/tmp/working
-        working_dir: /tmp/working
-        ports:
-            - 8889:8889
-        command: jupyter notebook --port=8889 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+  app:
+    build:
+      context: .
+    user: root
+    ports:
+      - '8888:8888'
+    environment:
+      - GRANT_SUDO=yes
+      - QUARTO_PYTHON=/opt/conda/bin/python
+    platform: linux/amd64
+    volumes:
+      - type: bind
+        source: ${LOCAL_WORKSPACE_FOLDER}
+        target: /home/jovyan/work
+    command: sleep infinity
