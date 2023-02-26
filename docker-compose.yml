@@ -1,7 +1,7 @@
-version: '3'
+version: '3.3'
 
 services:
-  app:
+  jupyter:
     build:
       context: .
     user: root
@@ -9,10 +9,9 @@ services:
       - '8888:8888'
     environment:
       - GRANT_SUDO=yes
-      - QUARTO_PYTHON=/opt/conda/bin/python
     platform: linux/amd64
     volumes:
       - type: bind
         source: ${LOCAL_WORKSPACE_FOLDER}
         target: /home/jovyan/work
-    command: sleep infinity
+    command: start-notebook.sh --NotebookApp.token=''

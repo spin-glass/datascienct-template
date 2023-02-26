@@ -2,12 +2,11 @@
 	"dockerComposeFile": [
 		"../docker-compose.yml"
 	],
-	"service": "app",
+	"service": "jupyter",
 	"workspaceFolder": "/home/jovyan/work",
 	"mounts": [
 		"source=${localWorkspaceFolder},target=/home/jovyan/work,type=bind,consistency=cached"
 	],
-	// "onCreateCommand": "quarto install tinytex",
 	"customizations": {
 		"vscode": {
 			"extensions": [
