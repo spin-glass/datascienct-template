@@ -1,0 +1,1 @@
+This is a devcontainer template for starting a new data science project.
